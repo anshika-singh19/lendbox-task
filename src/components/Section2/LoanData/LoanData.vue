@@ -1,7 +1,10 @@
 <template>
-  <div class="amtBox">
-   	<p class="inv-amount">{{investmentData}}</p>
-   	<p class="inv-heading">{{heading}}</p>
+  <div class="mb-5">
+   	<p class="head">Loan Details</p>
+
+   	<div class="LoanData">Total Loan to be paid <span class="badge badge-secondary">11</span></div>
+   	<div class="LoanData bg-white">Loan already paid <span class="badge badge-secondary">8</span></div>
+   	<div class="LoanData">Prepaid loan <span class="badge badge-secondary">12</span></div>
   </div>
 </template>
 
@@ -9,7 +12,7 @@
 	import axios from 'axios';
 
 	export default {
-	  	name: "AmountBox",
+	  	name: "interestData",
 		data:function(){
 	  		return{
 	  			heading:" ",
@@ -42,17 +45,17 @@
 </script>
 
 <style scoped>
-	.inv-amount{
-		font-size:35px;
-		color:#fff;
-		font-weight:bold;
-		margin-bottom:0;
+	.head{
+		color:"#1f3445";
+		font-family: "Helvetica Header",Blippo,fantasy;
 	}
 
-	.inv-heading{
-		margin-top:0;
-		font-size:15px;
-	}
+	.LoanData{
+	background-color:#cfd8dc;
+	font-size: 16px;
+	padding:20px;
+
+}
 
 </style>
 

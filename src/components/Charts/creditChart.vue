@@ -1,7 +1,10 @@
 <template>
   <div class="small">
     <line-chart :chart-data="datacollection"></line-chart>
-    <h3>Credit Chart</h3>
+    <div class="text-center credit-info">
+      <p class="mb-2 mt-1">You Credit Score is Fair</p>
+      <a href="#" class="report">See Complete Report</a>
+    </div>
   </div>
 </template>
 
@@ -37,21 +40,27 @@
         for(var k in this.chartValues) keys.push(k);
 
         var keyData=[];
-        for(var k in keys) keyData.push(this.chartValues[keys[k]]); 
-
-        var color=[];
-        for(var k in keys) color.push(this.getRandomColor());  
+        for(var k in keys) keyData.push(this.chartValues[keys[k]]);   
 
         this.datacollection = {
           labels: keys,
           datasets: [
             {
               label: ['1','2'],
-              backgroundColor: color,
-              data:keyData
+              backgroundColor: ['#1f3344','#495d70','#00695c','#009688','#80cbc4','#64ffda','#e0f2f1'],
+              data:[2,4,5,6,7,8,9]
             }
-          ]
+          ],
+
         }
+      },
+      options:{
+        legend:{
+            display: true,
+            labels: {
+               fontColor: 'rgb(255, 99, 132)'
+            }
+          }
       },
 
       getRandomColor() {
@@ -68,9 +77,30 @@
 
 <style scoped>
   .small {
-    width: 300px;
-    margin:15px auto;
-    padding:0 100px;
+    width: 190px;
+    margin:auto;
     background-color:#fff;
   }
+  .credit-info{
+    color:#00968b;
+  }
+
+  .credit-info  a{
+    text-decoration:none;
+  }
+
+  .report {
+    text-decoration:none;
+    background-image:linear-gradient(to right,#b0bec5,#eeeeee);
+    padding:8px 8px 8px 10px;
+    border-radius:5px;
+    color:#000d1e;
+    box-shadow: 0px 0px 3px #495d70;
+  }
+
+  .report:hover{
+    box-shadow:0px 0px 4px #b0bec5;
+  }
+
+ 
 </style>

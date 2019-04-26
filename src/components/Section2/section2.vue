@@ -1,12 +1,12 @@
 <template>
-  <div>
-	<div class="sectionbody">
-		<EmiGraph class="graph"/>
-		<div>
-			<InterestData class="boxData"/>
-			<InterestData class="boxData"/>
-			<InterestData class="boxData"/>
+  <div class="sectionbody container">
+	<div class="row justify-content-between">
+		<div class="col-lg-5">
+			<LoanData/>
 		</div>
+
+		<EmiGraph class="graph col-lg-6"/>
+		
 	</div>
 
   </div>
@@ -14,13 +14,13 @@
 
 <script>
 	import EmiGraph from '../EmiGraph/emiGraph.vue'
-	import InterestData from './InterestData/interestData.vue'
+	import LoanData from './LoanData/LoanData.vue'
 
 	export default {
 		name:'Section2',
 	  	components:{
 	  		EmiGraph,
-	  		InterestData
+	  		LoanData
 
 	  	}
 	  
@@ -28,17 +28,8 @@
 </script>
 
 <style scoped>
-	
-	.sectionbody{
-		display:flex;
-	}
 
-	.boxData{
-		width:450px;
-		height:150px;
-		background-color:#b0b1b591;
-		margin: 10px 30px;
-	}
+
 
 	
 </style>

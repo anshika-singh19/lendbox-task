@@ -1,5 +1,6 @@
 <template>
   <div class="small">
+    <p class="head mt-0">EMI Transaction History</p>
     <line-chart :chart-data="datacollection"></line-chart>
   </div>
 </template>
@@ -46,7 +47,7 @@
             datasets: [
               {
                 label: 'Data One',
-                backgroundColor: '#f87979',
+                backgroundColor: '#495d70',
                 data: [40, 39, 10, 40, 39, 80, 40]
               }
             ]
@@ -59,9 +60,17 @@
 
 <style scoped>
   .small {
-    max-width: 400px;
-    margin:  35px auto;
+    max-width: 300px;
+    margin:  0 auto;
     background-color:white;
-    padding: 50px 150px 70px;
+    padding:0 0 20px 20px;
+  }
+
+  .head{
+    color:"#1f3445";
+    font-size:16px;
+    margin-top:10px;
+    padding-top:0;
+    font-family: "Helvetica Header",Blippo,fantasy;
   }
 </style>
